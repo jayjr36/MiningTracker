@@ -5,7 +5,7 @@ use App\Http\Controllers\MiningTrackingController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/mining-tracking', [MiningTrackingController::class, 'index'])->name('mining-tracking');

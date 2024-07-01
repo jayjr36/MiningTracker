@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<div class="container-fluid" style="height:100vh; background-image: url('{{ asset('back.jpg') }}'); background-size: cover; background-position: center;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
