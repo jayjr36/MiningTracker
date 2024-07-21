@@ -8,7 +8,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/mining-tracking', [MiningTrackingController::class, 'index'])->name('mining-tracking');
+
+use App\Http\Controllers\MiningDataController;
+
+Route::get('/mining-tracking', [MiningDataController::class, 'index'])->name('mining-tracking');
+//Route::get('/mining-tracking', [MiningTrackingController::class, 'index'])->name('mining-tracking');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

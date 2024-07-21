@@ -4,9 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MiningTrackingController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
+// routes/web.php
 
-Route::post('/mining-tracking', [MiningTrackingController::class, 'store']);
+use App\Http\Controllers\MiningDataController;
+
+Route::post('/mining-tracking', [MiningDataController::class, 'store']);
+
