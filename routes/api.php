@@ -9,5 +9,5 @@ use App\Http\Controllers\MiningTrackingController;
 
 use App\Http\Controllers\MiningDataController;
 
-Route::post('/mining-tracking', [MiningDataController::class, 'store']);
+Route::post('/mining/tracking/data', [MiningDataController::class, 'store']);
 

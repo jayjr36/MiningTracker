@@ -38,7 +38,7 @@ class MiningDataController extends Controller
     public function index()
     {
         $miningData = MiningData::all();
-        return view('mining.index', compact('miningData'));
+        return view('index', compact('miningData'));
     }
 }
 

@@ -1,5 +1,5 @@
 <!-- resources/views/mining/index.blade.php -->
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="container mt-5">
