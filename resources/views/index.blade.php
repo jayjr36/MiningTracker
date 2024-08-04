@@ -36,5 +36,30 @@
             </tbody>
         </table>
     </div>
+
+    <!-- Emergency Log Table -->
+    <div class="mt-5">
+        <h2 class="text-center mb-4">Emergency Log</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Emergency Button</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($emergencyLogs as $log)
+                        <tr>
+                            <td>{{ $log->id }}</td>
+                            <td>{{ $log->emergency_button ? 'Activated' : 'Not Activated' }}</td>
+                            <td>{{ $log->created_at }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 @endsection

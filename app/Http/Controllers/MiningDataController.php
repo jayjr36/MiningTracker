@@ -2,6 +2,7 @@
 // app/Http/Controllers/MiningDataController.php
 namespace App\Http\Controllers;
 
+use App\Models\Emergency;
 use Illuminate\Http\Request;
 use App\Models\MiningData;
 
@@ -35,10 +36,28 @@ class MiningDataController extends Controller
      *
      * @return \Illuminate\View\View
      */
+
+
     public function index()
     {
-        $miningData = MiningData::all();
-        return view('index', compact('miningData'));
+        $miningData = MiningData::orderBy('created_at', 'desc')->take(20)->get();
+
+        $emergencyLogs = Emergency::orderBy('created_at', 'desc')->take(20)->get();
+
+        return view('mining.index', compact('miningData', 'emergencyLogs'));
+    }
+
+
+    public function updateEmergencyButton(Request $request)
+    {
+        $data = $request->validate([
+            'button' => 'required|boolean',
+        ]);
+
+        Emergency::create([
+            'emergency_button' => $data['button'],
+        ]);
+
+        return response()->json(['message' => 'Emergency button status updated successfully']);
     }
 }
-
